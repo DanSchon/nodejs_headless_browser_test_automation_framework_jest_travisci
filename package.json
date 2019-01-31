@@ -1,0 +1,23 @@
+{
+  "name": "nodejs_headless_browser_test_automation_framework_jest_travisci",
+  "version": "1.0.0",
+  "description": "jest, puppeteer, chromium, travis ci",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanSchon/nodejs_headless_browser_test_automation_framework_jest_travisci.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanSchon/nodejs_headless_browser_test_automation_framework_jest_travisci/issues"
+  },
+  "homepage": "https://github.com/DanSchon/nodejs_headless_browser_test_automation_framework_jest_travisci#readme",
+  "devDependencies": {
+    "jest": "^24.0.0",
+    "puppeteer": "^1.11.0"
+  }
+}
