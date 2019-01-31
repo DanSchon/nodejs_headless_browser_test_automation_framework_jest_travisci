@@ -1,12 +1,17 @@
 const puppeteer = require('puppeteer');
 const baseUrl = 'https://www.youtube.com/';
 
-test('launch a chromium browser', async() => {
-    const browser = await puppeteer.launch({
+let browser, driver;
+
+beforeEach(async() => {
+    // launch chromium browser
+    browser = await puppeteer.launch({
         headless: false
     });
-    const driver = await browser.newPage();
-    
+    driver = await browser.newPage();
+});
+
+test('navigate to base url', async() => {
     // navigate to base url
     await driver.goto(baseUrl);
     // extract text from logo
