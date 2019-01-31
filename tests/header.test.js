@@ -19,3 +19,7 @@ test('navigate to base url', async() => {
     // verify actual logo text matches expected value
     expect(logoText).toEqual('YouTube Home');
 });
+
+afterEach(async() => {
+    await browser.close();
+});
