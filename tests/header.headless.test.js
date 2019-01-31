@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer');
 
-test('launch a chromium browser', async() => {
+test('launch a headless chromium browser', async() => {
     const browser = await puppeteer.launch({
-        headless: false
+        headless: true
     });
     const window = await browser.newPage();
 });
