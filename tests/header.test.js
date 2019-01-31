@@ -15,9 +15,9 @@ test('navigate to base url', async() => {
     // navigate to base url
     await driver.goto(config.baseUrl);
     // extract text from logo
-    const logoText = await driver.$eval('#logo', el => el.tooltipText_);
+    const logoText = await driver.$eval('#content > div > h2', el => el.innerHTML);
     // verify actual logo text matches expected value
-    expect(logoText).toEqual('YouTube Home');
+    expect(logoText).toEqual('Login Page');
 });
 
 afterEach(async() => {
