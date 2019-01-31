@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const baseUrl = 'https://www.youtube.com/';
+const config = require('../config');
 
 let browser, driver;
 
@@ -13,7 +13,7 @@ beforeEach(async() => {
 
 test('navigate to base url', async() => {
     // navigate to base url
-    await driver.goto(baseUrl);
+    await driver.goto(config.baseUrl);
     // extract text from logo
     const logoText = await driver.$eval('#logo', el => el.tooltipText_);
     // verify actual logo text matches expected value
