@@ -4,10 +4,10 @@ const validUserFactory = require('./factories/validUserFactory');
 
 let browser, driver;
 
-beforeEach(async() => {
+beforeEach(async () => {
     // launch headless chromium browser
     browser = await puppeteer.launch({
-        headless: true
+        headless: false
     });
     driver = await browser.newPage();
     // navigate to base url
@@ -36,6 +36,6 @@ test('user can authenticate with valid credentials', async () => {
     }
 });
 
-afterEach(async() => {
+afterEach(async () => {
     await browser.close();
 });

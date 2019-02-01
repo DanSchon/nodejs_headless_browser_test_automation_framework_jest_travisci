@@ -3,7 +3,7 @@ const config = require('../config');
 
 let browser, driver;
 
-beforeEach(async() => {
+beforeEach(async () => {
     // launch headless chromium browser
     browser = await puppeteer.launch({
         headless: true
@@ -20,6 +20,6 @@ test('navigate to base url', async () => {
     expect(logoText).toEqual('Login Page');
 });
 
-afterEach(async() => {
+afterEach(async () => {
     await browser.close();
 });
