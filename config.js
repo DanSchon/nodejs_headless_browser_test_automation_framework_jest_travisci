@@ -1,10 +1,10 @@
 let testUrl;
 
-if (process.env.TestEnv === 'DEV') {
-    // testUrl = 'dev_url';
-} else if (process.env.TestEnv === 'QA') {
+if (process.env.NODE_ENV === 'QA') {
     // testUrl = 'qa_url';
-} else {
+} else if (process.env.NODE_ENV === 'stage') {
+    testUrl = 'https://the-internet.herokuapp.com/login';
+} else { // prod
     testUrl = 'https://the-internet.herokuapp.com/login';
 }
 

@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "10"
+dist: trusty
+env:
+  - NODE_ENV=stage
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+script:
+  - npm run test
