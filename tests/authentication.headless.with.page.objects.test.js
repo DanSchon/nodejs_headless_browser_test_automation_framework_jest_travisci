@@ -9,7 +9,7 @@ let browser, driver;
 beforeEach(async () => {
     // launch headless chromium browser
     browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         args: ['--no-sandbox'] // for travis ci vm
     });
     driver = await browser.newPage();
