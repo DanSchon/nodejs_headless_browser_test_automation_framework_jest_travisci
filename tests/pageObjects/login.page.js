@@ -2,6 +2,7 @@ class LoginPage {
 
     constructor(driver) {
         this.driver = driver;
+        this.header = '#content > div > h2';
         this.usernameField = '#username';
         this.passwordField = '#password';
         this.loginButton = '#login > button';

@@ -18,23 +18,29 @@ beforeEach(async () => {
 });
 
 test('user can authenticate with valid credentials', async () => {
-    const { validUsername, validPassword } = validUserFactory();
 
     const loginPage = new LoginPage(driver);
+    let currentHeader = await driver.$eval(loginPage.header, el => el.innerHTML);
+    expect(currentHeader).toEqual('Login Page');
+
+    const { validUsername, validPassword } = validUserFactory();
     await loginPage.enterUsername(validUsername);
     await loginPage.enterPassword(validPassword);
     await loginPage.clickLoginButton();
 
+    const homePage = new HomePage(driver);
     let authenticated = false;
     try {
-        const homePage = new HomePage(driver);
         await driver.waitFor(homePage.logoutButton);
+        currentHeader = await driver.$eval(homePage.header, el => el.innerHTML);
         authenticated = true;
     } catch(e) {
         console.log(e);
     } finally {
+        expect(currentHeader.includes('Secure Area')).toEqual(true);
         expect(authenticated).toBe(true);
     }
+
 });
 
 afterEach(async () => {
