@@ -9,4 +9,4 @@ class HomePage {
     }
 }
 
-exports.default = HomePage;
+module.exports = HomePage;

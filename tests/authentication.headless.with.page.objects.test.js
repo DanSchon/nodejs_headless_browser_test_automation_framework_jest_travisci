@@ -31,7 +31,7 @@ test('user can authenticate with valid credentials', async () => {
         await driver.waitFor(homePage.logoutButton);
         authenticated = true;
     } catch(e) {
-        console.log('user with valid credentials was not authenticated');
+        console.log(e);
     } finally {
         expect(authenticated).toBe(true);
     }
