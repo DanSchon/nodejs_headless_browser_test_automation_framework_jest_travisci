@@ -1,22 +1,19 @@
 class LoginPage {
 
     constructor(driver) {
-        this.driver = driver;
-        this.usernameField = '#username';
-        this.passwordField = '#password';
-        this.loginButton = '#login > button';
+        this.driver = driver;  
     }
 
     enterUsername(username) {
-        return this.driver.type(this.usernameField, username);
+        return this.driver.type('#username', username);
     }
 
     enterPassword(password) {
-        return this.driver.type(this.passwordField, password);
+        return this.driver.type('#password', password);
     }
 
     clickLoginButton() {
-        return this.driver.click(this.loginButton);
+        return this.driver.click('#login > button');
     }
 
 }
