@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 const config = require('../config');
 const validUserFactory = require('./factories/validUserFactory');
 const LoginPage = require('./pageObjects/login.page');
+const HomePage = require('./pageObjects/home.page');
 
 let browser, driver;
 
@@ -26,7 +27,8 @@ test('user can authenticate with valid credentials', async () => {
 
     let authenticated = false;
     try {
-        await driver.waitFor('a[href="/logout"]');
+        const homePage = new HomePage(driver);
+        await driver.waitFor(homePage.logoutButton);
         authenticated = true;
     } catch(e) {
         console.log('user with valid credentials was not authenticated');
